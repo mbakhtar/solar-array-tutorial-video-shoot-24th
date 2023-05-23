@@ -45,12 +45,15 @@ basic.forever(function () {
 ```
 ## @showhint
 If the condition is true add ``||basic:show icon||`` block and 
-select ``||basic:target icon||``
+select ``||basic:target icon||``. To stop the ``||Solar Array||`` from scanning 
+for the sunlight, go to ``||fwdMotors:set servo1 off||``. This indicates the ``||Solar Array||`` 
+is facing the sun and receiving maximum light
 ```blocks
 let position = -90
 basic.forever(function () {
     if (fwdSensors.solar1.fwdLightLevel() > 75) {
     basic.showIcon(IconNames.Target)
+    fwdMotors.servo1.fwdSetEnabled(false)
     } 
     else {}
 })
@@ -63,6 +66,7 @@ let position = -90
 basic.forever(function () {
     if (fwdSensors.solar1.fwdLightLevel() > 75) {
         basic.showIcon(IconNames.Target)
+        fwdMotors.servo1.fwdSetEnabled(false)
     } else {
         basic.showIcon(IconNames.SmallDiamond)
             }
@@ -77,6 +81,7 @@ let position = -90
 basic.forever(function () {
     if (fwdSensors.solar1.fwdLightLevel() > 75) {
         basic.showIcon(IconNames.Target)
+        fwdMotors.servo1.fwdSetEnabled(false)
     } else {
         basic.showIcon(IconNames.SmallDiamond)
         position += 10
@@ -93,6 +98,7 @@ let position = -90
 basic.forever(function () {
     if (fwdSensors.solar1.fwdLightLevel() > 75) {
         basic.showIcon(IconNames.Target)
+        fwdMotors.servo1.fwdSetEnabled(false)
     } else {
         basic.showIcon(IconNames.SmallDiamond)
         position += 10
@@ -108,6 +114,7 @@ let position = -90
 basic.forever(function () {
     if (fwdSensors.solar1.fwdLightLevel() > 75) {
         basic.showIcon(IconNames.Target)
+        fwdMotors.servo1.fwdSetEnabled(false)
     } else {
         basic.showIcon(IconNames.SmallDiamond)
         position += 10
@@ -126,6 +133,7 @@ let position = -90
 basic.forever(function () {
     if (fwdSensors.solar1.fwdLightLevel() > 75) {
         basic.showIcon(IconNames.Target)
+        fwdMotors.servo1.fwdSetEnabled(false)
     } else {
         basic.showIcon(IconNames.SmallDiamond)
         position += 10
@@ -144,6 +152,7 @@ let position = -90
 basic.forever(function () {
     if (fwdSensors.solar1.fwdLightLevel() > 75) {
         basic.showIcon(IconNames.Target)
+        fwdMotors.servo1.fwdSetEnabled(false)
     } else {
         basic.showIcon(IconNames.SmallDiamond)
         position += 10
@@ -163,6 +172,7 @@ let position = -90
 basic.forever(function () {
     if (fwdSensors.solar1.fwdLightLevel() > 75) {
         basic.showIcon(IconNames.Target)
+        fwdMotors.servo1.fwdSetEnabled(false)
     } else {
         basic.showIcon(IconNames.SmallDiamond)
         position += 10
@@ -178,9 +188,11 @@ basic.forever(function () {
 This is the final code
 ```blocks
 let position = -90
+fwdMotors.servo1.fwdSetEnabled(false)
 basic.forever(function () {
     if (fwdSensors.solar1.fwdLightLevel() > 75) {
         basic.showIcon(IconNames.Target)
+        fwdMotors.servo1.fwdSetEnabled(false)
     } else {
         basic.showIcon(IconNames.SmallDiamond)
         position += 10
